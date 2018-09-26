@@ -34,7 +34,6 @@ Puppet::Type.newtype(:gspanner_instance_config) do
     A possible configuration for a Cloud Spanner instance. Configurations define the geographic
     placement of nodes and their replication.
   DOC
-
   autorequire(:gauth_credential) do
     credential = self[:credential]
     raise "#{ref}: required property 'credential' is missing" if credential.nil?
