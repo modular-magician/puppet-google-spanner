@@ -93,6 +93,7 @@ Puppet::Type.type(:gspanner_instance_config).provide(:google) do
   end
 
   def exports
+    raise "Must fetch before accessing exported values." if @fetched.nil?
     {
       name: @fetched['name']
     }
